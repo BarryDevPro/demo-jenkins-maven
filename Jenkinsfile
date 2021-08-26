@@ -2,21 +2,12 @@ pipeline {
     agent any
     stages {
         stage('Build') { 
-            steps {
-                
+            steps { 
                 sh 'mvn -B -DskipTests clean package' 
+                sh 'cd target/ && java -jar demo-jenkins-1.0-SNAPSHOT.jar'
             }
         }
-         stage('Test') {
-            steps {
-                sh 'mvn test'
-            }   
-        }
-        stage('Run') {
-            steps {
-                 sh 'cd target/ && java -jar demo-jenkins-1.0-SNAPSHOT.jar'
-            }   
-        }
+      
 
     }
 }
