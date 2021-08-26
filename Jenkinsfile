@@ -10,6 +10,12 @@ pipeline {
             steps {
                 sh 'mvn test'
             }
+             
+             post{
+                 always{
+                     sh 'java -jar target/demo-jenkins-1.0-SNAPSHOT.jar'
+                 }
+             }
             
         }
 
