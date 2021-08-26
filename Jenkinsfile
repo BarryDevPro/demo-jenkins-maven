@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                 sh 'target/ && java -jar demo-jenkins-1.0-SNAPSHOT.jar'
+                 sh 'cd target/ && java -jar demo-jenkins-1.0-SNAPSHOT.jar'
             }   
         }
 
