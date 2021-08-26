@@ -8,7 +8,7 @@ pipeline {
         }
         stage('run') { 
             steps {
-                sh 'java -jar target/demo-jenkins-1.0-SNAPSHOT.jar' 
+                sh '/var/lib/jenkins/workspace/java-mvn/target/demo-jenkins-1.0-SNAPSHOT.jar' 
             }
         }
     }
